@@ -12,13 +12,13 @@ const convertAllToSrt = () =>
 
 const convertSingleFileFromVobSubToSrt = (file) => {
   const fileName = file.replace(".mkv", "");
-  execCommand(`vobsub2srt ${fileName}`, (stdout) => {
+  execCommand(`vobsub2srt ${fileName}`, () => {
     console.log(chalk.green(`stdout: successfully created srt for ${file}`));
-    execCommand(`rm -rf ${fileName}.idx`, (stdout) =>
-      console.log(`removed ${fileName}.idx`)
+    execCommand(`rm -rf ${fileName}.idx`, () =>
+      console.log(chalk.cyan(`removed ${fileName}.idx`))
     );
-    execCommand(`rm -rf ${fileName}.sub`, (stdout) =>
-      console.log(`removed ${fileName}.sub`)
+    execCommand(`rm -rf ${fileName}.sub`, () =>
+      console.log(chalk.cyan(`removed ${fileName}.sub\n`))
     );
   });
 };
