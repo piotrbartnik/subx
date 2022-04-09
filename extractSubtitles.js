@@ -14,8 +14,9 @@ const runExtraction = (track) => {
 };
 
 const extractSubtitlesFromTrack = (file, track) => {
-  execCommand(`mkvextract tracks ${file} ${track}:${file}.txt`, (stdout) =>
-    console.log(`stdout: ${stdout}`)
+  execCommand(
+    `mkvextract tracks ${file} ${track}:${file.replace("mkv", "")}`,
+    (stdout) => console.log(`stdout: ${stdout}`)
   );
 };
 
