@@ -4,11 +4,12 @@
   "description": "Extract and adjust subtitles for movie",
   "main": "execCommand.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Piotr Bartnik",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^4.0.1"
+    "chalk": "^4.0.1",
+    "jest": "^27.5.1"
   }
 }

@@ -1,14 +1,13 @@
 const { exec } = require("child_process");
 
-const execCommand = (command, fn) => {
+const execCommand = async (command, fn) =>
   exec(command, (err, stdout) => {
     if (err) {
       console.error(err);
     } else {
-      fn(stdout);
+      fn?.(stdout);
     }
   });
-};
 
 const extractFileNames = (stdout, track, filetype = ".mkv", actionFn) => {
   const movieFiles = stdout.split("\n").filter((file) => file.match(filetype));
