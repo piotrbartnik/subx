@@ -9,14 +9,14 @@ const execCommand = async (command, fn) =>
     }
   });
 
-const extractFileNames = (stdout, track, filetype = ".mkv", actionFn) => {
-  const movieFiles = stdout.split("\n").filter((file) => file.match(filetype));
+const extractFileNames = (stdout, track, filetype = "mkv", actionFn) => {
+  const allFiles = stdout.split("\n").filter((file) => file.match(filetype));
 
   if (actionFn) {
-    movieFiles.forEach((movie) => actionFn(movie, track));
+    allFiles.forEach((file) => actionFn(file, track));
   }
 
-  return movieFiles;
+  return allFiles;
 };
 
 module.exports = { execCommand, extractFileNames };
