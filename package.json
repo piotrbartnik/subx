@@ -9,6 +9,7 @@
   "author": "Piotr Bartnik",
   "license": "MIT",
   "dependencies": {
+    "@types/jest": "^27.4.1",
     "chalk": "^4.0.1",
     "jest": "^27.5.1"
   }
