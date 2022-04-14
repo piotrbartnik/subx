@@ -1,4 +1,4 @@
-const { execCommand, extractFileNames } = require("./execCommand");
+const { execCommand, extractFileNames } = require("./utils");
 const chalk = require("chalk");
 
 const convertAllToSrt = () =>

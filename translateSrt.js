@@ -1,6 +1,6 @@
 const chalk = require("chalk");
 var fs = require("fs");
-const { execCommand, extractFileNames } = require("./execCommand");
+const { execCommand, extractFileNames } = require("./utils");
 
 const translateFile = (fileName) => {
   console.log(fileName);
