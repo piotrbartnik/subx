@@ -29,7 +29,7 @@ Run `npm install`.
 - extract subtitles from movie directory (assuming the project was set in an adjacent directory):
 
 ```bash
-node ../extractSubtitles.js -track=2
+node ../extractSubtitles.js --track 2
 ```
 
 - depending on subtitles type:

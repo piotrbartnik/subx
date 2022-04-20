@@ -1,11 +1,15 @@
 const { execCommand, extractFileNames } = require("./utils");
-var args = process.argv.slice(2);
+const { program } = require("commander");
 
-const trackFromArgs = args[0]?.split("=")[1];
+program.option("--track");
 
-const runExtraction = (track) => {
+program.parse();
+
+const trackFromArgs = program.args[0];
+
+const runExtraction = (track = 2) => {
   if (!track) {
-    throw new Error("Plese add track in args like -track=2");
+    throw new Error("Plese add track in args like --track 2");
   }
 
   execCommand("ls", (stdout) =>
