@@ -1,8 +1,15 @@
 const chalk = require("chalk");
 var fs = require("fs");
+const { program } = require("commander");
 const { execCommand, extractFileNames } = require("./utils");
 
-const translateFile = (fileName, inputLanguage) => {
+program.option("--intputLanguage");
+
+program.parse();
+
+const intputLanguageFromArgs = program.args[0];
+
+const translateFile = (fileName, inputLanguage = "eng") => {
   console.log(fileName);
   execCommand(
     `trans -i ${fileName} -o ${fileName.replace(
@@ -20,4 +27,4 @@ const translateAllFiles = () =>
     allSrtSubtitleFiles.forEach(translateFile, inputLanguage);
   });
 
-translateAllFiles((inputLanguage = "eng"));
+translateAllFiles(intputLanguageFromArgs);
