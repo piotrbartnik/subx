@@ -1,8 +1,8 @@
 {
-  "name": "extractandcontertsubtitles",
+  "name": "subx",
   "version": "1.0.0",
   "description": "Extract and adjust subtitles for movie",
-  "main": "execCommand.js",
+  "main": "bin/index.js",
   "scripts": {
     "test": "jest"
   },
@@ -13,5 +13,8 @@
     "chalk": "^4.0.1",
     "commander": "^9.2.0",
     "jest": "^27.5.1"
+  },
+  "bin": {
+    "subx": "./bin/index.js"
   }
 }

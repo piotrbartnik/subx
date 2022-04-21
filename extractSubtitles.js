@@ -1,11 +1,4 @@
 const { execCommand, extractFileNames } = require("./utils");
-const { program } = require("commander");
-
-program.option("--track");
-
-program.parse();
-
-const trackFromArgs = program.args[0];
 
 const runExtraction = (track = 2) => {
   if (!track) {
@@ -24,4 +17,4 @@ const extractSubtitlesFromTrack = (file, track) => {
   );
 };
 
-runExtraction(trackFromArgs);
+module.exports = { runExtraction };
