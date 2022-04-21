@@ -4,7 +4,7 @@ const { program } = require("commander");
 const { runExtraction } = require("../extractSubtitles");
 
 program
-  .command("extract")
+  .command("extract-subtitles")
   .description("Extract subtitle in srt from a given track")
   .option(
     "-t, --track <number>",
@@ -13,8 +13,8 @@ program
 
 program.parse();
 
-const trackFromArgs = program.args[1];
+const trackFromArgs = program.args[2];
 
-if (program.args[0] === "extract") {
+if (program.args[0] === "extract-subtitles") {
   runExtraction(trackFromArgs);
 }
