@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const { program } = require("commander");
-const { runExtraction } = require("../extractSubtitles");
+const { runExtraction } = require("../src/extractSubtitles");
 
 program
   .command("extract-subtitles")
