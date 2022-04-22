@@ -1,4 +1,4 @@
-const { execCommand, extractFileNames } = require("./utils");
+const { execCommand, extractFileNames } = require("../utils");
 
 const runExtraction = (track = 2) => {
   if (!track) {
