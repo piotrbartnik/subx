@@ -1,8 +1,14 @@
 #!/usr/bin/env node
 
 const { program } = require("commander");
-const { extractSubtitlesRun } = require("../src/extractSubtitles/index");
-const { translateSrt } = require("../src/translateSrt/index");
+const { resolve } = require("path");
 
-extractSubtitlesRun();
-translateSrt();
+program.command(
+  "extract-subtitles",
+  "Extract subtitle in srt from a given track",
+  {
+    executableFile: resolve(__dirname, "../src/extractSubtitles/index.js"),
+  }
+);
+
+program.parse();

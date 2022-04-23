@@ -4,21 +4,16 @@ const { program } = require("commander");
 const { runExtraction } = require("./extractSubtitles");
 
 const extractSubtitlesRun = () => {
-  program
-    .command("extract-subtitles")
-    .description("Extract subtitle in srt from a given track")
-    .option(
-      "-t, --track <number>",
-      "track of subtitle in mkv file. Defaults to 2"
-    );
+  program.option(
+    "-t, --track <number>",
+    "track of subtitle in mkv file. Defaults to 3"
+  );
 
   program.parse();
 
   const trackFromArgs = program.args[2];
 
-  if (program.args[0] === "extract-subtitles") {
-    runExtraction(trackFromArgs);
-  }
+  runExtraction(trackFromArgs);
 };
 
-module.exports = { extractSubtitlesRun };
+extractSubtitlesRun();
