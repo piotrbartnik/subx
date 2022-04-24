@@ -11,9 +11,9 @@ const extractSubtitlesRun = () => {
 
   program.parse();
 
-  const trackFromArgs = program.args[2];
+  const programOptions = program.opts();
 
-  runExtraction(trackFromArgs);
+  runExtraction(programOptions?.track);
 };
 
 extractSubtitlesRun();
