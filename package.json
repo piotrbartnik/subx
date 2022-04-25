@@ -17,5 +17,8 @@
   },
   "bin": {
     "subx": "./bin/index.js"
+  },
+  "devDependencies": {
+    "eslint": "^8.14.0"
   }
 }
