@@ -6,7 +6,7 @@ const { runExtraction } = require("./extractSubtitles");
 const extractSubtitlesRun = () => {
   program.option(
     "-t, --track <number>",
-    "track of subtitle in mkv file. Defaults to 3"
+    "track of subtitle in mkv file. Defaults to 2"
   );
 
   program.parse();
