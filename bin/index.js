@@ -22,6 +22,9 @@ program
   )
   .command("extract-subtitles", "Extract subtitle in srt from a given track", {
     executableFile: resolve(__dirname, "../src/extractSubtitles/index.js"),
+  })
+  .command("translate-srt", "Translate srt subtitles", {
+    executableFile: resolve(__dirname, "../src/translateSrt/index.js"),
   });
 
 program.parse();
