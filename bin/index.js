@@ -2,6 +2,17 @@
 
 const { program } = require("commander");
 const { resolve } = require("path");
+const CFonts = require("cfonts");
+
+CFonts.say("subX", {
+  font: "3d",
+  align: "left",
+  colors: ["red", "blue"],
+  letterSpacing: 4,
+  space: true,
+  maxLength: "0",
+  env: "node",
+});
 
 program
   .name("subx")
