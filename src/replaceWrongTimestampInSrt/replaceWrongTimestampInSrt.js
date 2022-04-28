@@ -28,4 +28,4 @@ const replaceAllWrongTimestamps = () =>
     allSrtPLFiles.forEach((movie) => replaceWrongTimeStampInSrt(movie));
   });
 
-replaceAllWrongTimestamps();
+module.exports = { replaceAllWrongTimestamps };
