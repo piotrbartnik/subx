@@ -23,4 +23,4 @@ const convertSingleFileFromVobSubToSrt = (file) => {
   });
 };
 
-convertAllToSrt();
+module.exports = { convertAllToSrt };
