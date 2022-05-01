@@ -25,6 +25,16 @@ program
   })
   .command("translate-srt", "Translate srt subtitles", {
     executableFile: resolve(__dirname, "../src/translateSrt/index.js"),
-  });
+  })
+  .command(
+    "adjust-subtitles",
+    "Adjust subtitles timesamps and remove original subtitle",
+    {
+      executableFile: resolve(
+        __dirname,
+        "../src/replaceWrongTimestampInSrt/index.js"
+      ),
+    }
+  );
 
 program.parse();
