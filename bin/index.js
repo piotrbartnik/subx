@@ -35,6 +35,9 @@ program
         "../src/replaceWrongTimestampInSrt/index.js"
       ),
     }
-  );
+  )
+  .command("vobsub-tosrt", "Resolve vob sub subtitles to srt", {
+    executableFile: resolve(__dirname, "../src/vobSubToSrt/index.js"),
+  });
 
 program.parse();
