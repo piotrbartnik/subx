@@ -38,6 +38,9 @@ program
   )
   .command("vobsub-tosrt", "Resolve vob sub subtitles to srt", {
     executableFile: resolve(__dirname, "../src/vobSubToSrt/index.js"),
+  })
+  .command("prerequisites", "Check if needed software is installed", {
+    executableFile: resolve(__dirname, "../src/prerequisites/index.js"),
   });
 
 program.parse();

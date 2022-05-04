@@ -1,9 +1,11 @@
 const { exec } = require("child_process");
 
-const execCommand = async (command, fn) =>
+const execCommand = async (command, fn, suprassError, errorFn) =>
   exec(command, (err, stdout) => {
-    if (err) {
+    if (err && !suprassError) {
       console.error(err);
+    } else if (err && suprassError) {
+      errorFn?.(err);
     } else {
       fn?.(stdout);
     }
