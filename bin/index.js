@@ -20,6 +20,9 @@ program
   .description(
     "Extract, translate and adjust srt subitle files from mkv movies"
   )
+  .command("prerequisites", "Check if needed software is installed", {
+    executableFile: resolve(__dirname, "../src/prerequisites/index.js"),
+  })
   .command("extract-subtitles", "Extract subtitle in srt from a given track", {
     executableFile: resolve(__dirname, "../src/extractSubtitles/index.js"),
   })
@@ -38,9 +41,6 @@ program
   )
   .command("vobsub-tosrt", "Resolve vob sub subtitles to srt", {
     executableFile: resolve(__dirname, "../src/vobSubToSrt/index.js"),
-  })
-  .command("prerequisites", "Check if needed software is installed", {
-    executableFile: resolve(__dirname, "../src/prerequisites/index.js"),
   });
 
 program.parse();
