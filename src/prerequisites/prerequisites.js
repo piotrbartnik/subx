@@ -1,6 +1,6 @@
 const { execCommand } = require("../utils");
 
-const neededSoftware = ["mkvinfo"];
+const neededSoftware = ["mkvinfo", "mkvextract", "vobsub2srt", "trans"];
 
 const checkPrerequisites = () => {
   neededSoftware.forEach(async (software) => {
