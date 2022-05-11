@@ -2,7 +2,7 @@ const { execCommand } = require("../utils");
 const { spawn } = require("child_process");
 const inquirer = require("inquirer");
 
-const neededSoftware = ["mkvinfofd" /*"mkvextract", "vobsub2srt", "trans"*/];
+const neededSoftware = ["mkvinfod" /*"mkvextract", "vobsub2srt", "trans"*/];
 
 const questions = [
   {
@@ -16,6 +16,11 @@ const questions = [
   },
 ];
 
+const mkvInfoInstall = () =>
+  spawn("sudo", ["apt-get", "install", "mkvtoolnix"], {
+    stdio: "inherit",
+  });
+
 const checkPrerequisites = () => {
   neededSoftware.forEach(async (software) => {
     execCommand(
@@ -26,19 +31,7 @@ const checkPrerequisites = () => {
         console.log(`${software} is not installed`);
         inquirer.prompt(questions).then((answers) => {
           if (answers.install) {
-            const ls = spawn("ls", ["-lh", "/usr"]);
-
-            ls.stdout.on("data", function (data) {
-              console.log("stdout: " + data.toString());
-            });
-
-            ls.stderr.on("data", function (data) {
-              console.log("stderr: " + data.toString());
-            });
-
-            ls.on("exit", function (code) {
-              console.log("child process exited with code " + code.toString());
-            });
+            mkvInfoInstall();
           }
         });
       }
