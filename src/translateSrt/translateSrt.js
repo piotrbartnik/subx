@@ -6,12 +6,12 @@ const translateFile = (
   inputLanguage = "eng",
   outputLanguage = "pol"
 ) => {
-  console.log(fileName);
+  console.log(fileName, inputLanguage, outputLanguage);
   execCommand(
     `trans -i ${fileName} -o ${fileName.replace(
       ".srt",
       ".pl.srt"
-    )} -l eng -t pol -b -show-original n`,
+    )} -l ${inputLanguage} -t ${outputLanguage} -b -show-original n`,
     () => console.log(chalk.greenBright(`File ${fileName} was translated \n`))
   );
 };
@@ -20,7 +20,9 @@ const translateAllFiles = (inputLanguage, outputLanguage) =>
   execCommand("ls", (stdout) => {
     const allSrtSubtitleFiles = extractFileNames(stdout, undefined, ".srt");
 
-    allSrtSubtitleFiles.forEach(translateFile, inputLanguage, outputLanguage);
+    allSrtSubtitleFiles.forEach((file) =>
+      translateFile(file, inputLanguage, outputLanguage)
+    );
   });
 
 module.exports = { translateAllFiles };
