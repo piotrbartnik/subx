@@ -6,7 +6,11 @@ const translateFile = (
   inputLanguage = "eng",
   outputLanguage = "pol"
 ) => {
-  console.log(fileName, inputLanguage, outputLanguage);
+  console.log(
+    chalk.magentaBright(
+      `Translating ${fileName} from ${inputLanguage} to ${outputLanguage}`
+    )
+  );
   execCommand(
     `trans -i ${fileName} -o ${fileName.replace(
       ".srt",

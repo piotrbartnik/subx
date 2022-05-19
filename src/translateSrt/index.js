@@ -18,8 +18,6 @@ const translateAllFilesRun = () => {
 
   const programOptions = program.opts();
 
-  console.log(programOptions);
-
   translateAllFiles(
     programOptions?.["inputLanguage"],
     programOptions?.["outputLanguage"]
