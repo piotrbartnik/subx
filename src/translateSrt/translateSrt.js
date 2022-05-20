@@ -14,7 +14,7 @@ const translateFile = (
   execCommand(
     `trans -i ${fileName} -o ${fileName.replace(
       ".srt",
-      ".pl.srt"
+      `.${outputLanguage}.srt`
     )} -l ${inputLanguage} -t ${outputLanguage} -b -show-original n`,
     () => console.log(chalk.greenBright(`File ${fileName} was translated \n`))
   );
