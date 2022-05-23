@@ -9,7 +9,7 @@ const replaceWrongTimeStampInSrt = (fileName) => {
     }
     var result = data.replace(/(\d{2})[\s.]?(\d{3})/g, "$1,$2");
 
-    fs.writeFile(fileName.replace(".pl", ""), result, "utf8", function (err) {
+    fs.writeFile(fileName.replace(".pol", ""), result, "utf8", function (err) {
       console.log(chalk.bgGreenBright(chalk.black(` ${fileName} adjusted \n`)));
       if (err) return console.log(err);
     });
@@ -22,7 +22,7 @@ const replaceWrongTimeStampInSrt = (fileName) => {
 const replaceAllWrongTimestamps = () =>
   execCommand("ls", (stdout) => {
     const allSrtPLFiles = extractFileNames(stdout, undefined, ".srt").filter(
-      (file) => file.match(/.pl.srt/)
+      (file) => file.match(/.pol.srt/)
     );
 
     allSrtPLFiles.forEach((movie) => replaceWrongTimeStampInSrt(movie));
