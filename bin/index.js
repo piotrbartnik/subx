@@ -26,7 +26,7 @@ program
   .command("extract-subtitles", "Extract subtitle in srt from a given track", {
     executableFile: resolve(__dirname, "../src/extractSubtitles/index.js"),
   })
-  .command("translate-srt", "Translate srt subtitles", {
+  .command("translate-subtitles", "Translate srt subtitles", {
     executableFile: resolve(__dirname, "../src/translateSrt/index.js"),
   })
   .command(
@@ -39,7 +39,7 @@ program
       ),
     }
   )
-  .command("vobsub-tosrt", "Resolve vob sub subtitles to srt", {
+  .command("vobsub-to-srt", "Resolve vob sub subtitles to srt", {
     executableFile: resolve(__dirname, "../src/vobSubToSrt/index.js"),
   });
 
