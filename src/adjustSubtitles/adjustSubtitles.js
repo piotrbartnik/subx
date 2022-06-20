@@ -2,7 +2,7 @@ const chalk = require("chalk");
 var fs = require("fs");
 const { execCommand, extractFileNames } = require("../utils");
 
-const replaceWrongTimeStampInSrt = (fileName) => {
+const adjustSubtitles = (fileName) => {
   fs.readFile(fileName, "utf8", function (err, data) {
     if (err) {
       return console.log(err);
@@ -19,13 +19,13 @@ const replaceWrongTimeStampInSrt = (fileName) => {
   });
 };
 
-const replaceAllWrongTimestamps = () =>
+const adjustAllSubtitles = () =>
   execCommand("ls", (stdout) => {
     const allSrtPLFiles = extractFileNames(stdout, undefined, ".srt").filter(
       (file) => file.match(/.pol.srt/)
     );
 
-    allSrtPLFiles.forEach((movie) => replaceWrongTimeStampInSrt(movie));
+    allSrtPLFiles.forEach((movie) => adjustSubtitles(movie));
   });
 
 module.exports = { replaceAllWrongTimestamps };

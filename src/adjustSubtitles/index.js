@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-const { replaceAllWrongTimestamps } = require("./replaceWrongTimestampInSrt");
+const { adjustAllSubtitles } = require("./adjustSubtitles");
 
-const replaceAllWrongTimestampsRun = () => {
-  replaceAllWrongTimestamps();
+const adjustAllSubtitlesRun = () => {
+  adjustAllSubtitles();
 };
 
-replaceAllWrongTimestampsRun();
+adjustAllSubtitlesRun();

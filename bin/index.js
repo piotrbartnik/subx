@@ -33,10 +33,7 @@ program
     "adjust-subtitles",
     "Adjust subtitles timesamps and remove original subtitle",
     {
-      executableFile: resolve(
-        __dirname,
-        "../src/replaceWrongTimestampInSrt/index.js"
-      ),
+      executableFile: resolve(__dirname, "../src/adjustSubtitles/index.js"),
     }
   )
   .command("vobsub-to-srt", "Resolve vob sub subtitles to srt", {
