@@ -16,7 +16,7 @@ const questions = [
   },
 ];
 
-const mkvInfoInstall = () =>
+const mkvInfoAndExtractInstall = () =>
   spawn("sudo", ["apt-get", "install", "mkvtoolnix"], {
     stdio: "inherit",
   });
@@ -31,7 +31,7 @@ const checkPrerequisites = () => {
         console.log(`${software} is not installed`);
         inquirer.prompt(questions).then((answers) => {
           if (answers.install) {
-            mkvInfoInstall();
+            mkvInfoAndExtractInstall();
           }
         });
       }
