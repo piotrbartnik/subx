@@ -28,4 +28,4 @@ const adjustAllSubtitles = () =>
     allSrtPLFiles.forEach((movie) => adjustSubtitles(movie));
   });
 
-module.exports = { replaceAllWrongTimestamps };
+module.exports = { adjustAllSubtitles };
