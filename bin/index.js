@@ -36,6 +36,9 @@ program
       executableFile: resolve(__dirname, "../src/adjustSubtitles/index.js"),
     }
   )
+  .command("rename-subtitles", "Rename subtitles", {
+    executableFile: resolve(__dirname, "../src/renameAllSrt/index.js"),
+  })
   .command("vobsub-to-srt", "Resolve vob sub subtitles to srt", {
     executableFile: resolve(__dirname, "../src/vobSubToSrt/index.js"),
   });
