@@ -39,6 +39,9 @@ program
   .command("rename-subtitles", "Rename subtitles", {
     executableFile: resolve(__dirname, "../src/renameAllSrt/index.js"),
   })
+  .command("adjust-timestamps", "Adjust subtitles timestamp", {
+    executableFile: resolve(__dirname, "../src/adjustTimestamps/index.js"),
+  })
   .command("vobsub-to-srt", "Resolve vob sub subtitles to srt", {
     executableFile: resolve(__dirname, "../src/vobSubToSrt/index.js"),
   });
