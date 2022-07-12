@@ -11,17 +11,19 @@ const renameSubtitles = (fileName) => {
     fs.writeFile(
       fileName.replace(
         /.*/,
-        `${fileName.replace(/.*E?P?\s?(\d{3}).*/gi, "$1")}.srt`
+        `${fileName.replace(/.*E?P?\s?(\d{1,3}).*/gi, "$1")}.srt`
       ),
       data,
       "utf8",
       function (err) {
-        console.log(chalk.bgGreenBright(chalk.black(`${fileName} renamed \n`)));
+        console.log(
+          chalk.bgGreenBright(chalk.black(`${fileName} has been renamed \n`))
+        );
         if (err) return console.log(err);
       }
     );
     execCommand(`rm -rf ${fileName}`, () =>
-      console.log(chalk.yellow(`removed ${fileName}\n`))
+      console.log(chalk.yellow(`removed ${fileName} subtitles file\n`))
     );
   });
 };
@@ -30,7 +32,7 @@ const renameAllSubtitles = () =>
   execCommand("ls", (stdout) => {
     const allSrtFiles = extractFileNames(stdout, undefined, ".srt");
 
-    allSrtFiles.forEach((movie, index) => renameSubtitles(movie, index));
+    allSrtFiles.forEach((subtitle, index) => renameSubtitles(subtitle, index));
   });
 
 module.exports = { renameAllSubtitles };
