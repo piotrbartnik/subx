@@ -13,7 +13,7 @@ const runExtraction = (track = 2) => {
 const extractSubtitlesFromTrack = (file, track) => {
   execCommand(
     `mkvextract tracks ${file} ${track}:${file.replace("mkv", "srt")}`,
-    (stdout) => console.log(`stdout: ${stdout}`)
+    () => console.log(`Subitles for ${file} extracted succesfully`)
   );
 };
 
