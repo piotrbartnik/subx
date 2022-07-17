@@ -10,8 +10,9 @@ const renameSubtitles = (fileName) => {
 
     fs.writeFile(
       fileName.replace(
-        /.*/,
-        `${fileName.replace(/.*E?P?\s?(\d{1,3}).*/gi, "$1")}.srt`
+        fileName,
+        // that line needs to be adjusted to various episode name regexp. Maybe pass and argumetn with it?
+        `${fileName.match(/.*e?p?.? ?(\d{2}).*/i)[1]}.srt`
       ),
       data,
       "utf8",
@@ -22,9 +23,10 @@ const renameSubtitles = (fileName) => {
         if (err) return console.log(err);
       }
     );
-    execCommand(`rm -rf ${fileName}`, () =>
-      console.log(chalk.yellow(`removed ${fileName} subtitles file\n`))
-    );
+    // removal needs to be done after write file as it's removing files we need
+    // execCommand(`rm -rf ${fileName}`, () =>
+    //   console.log(chalk.yellow(`removed ${fileName} subtitles file\n`))
+    // );
   });
 };
 
