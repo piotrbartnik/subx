@@ -2,11 +2,13 @@ const chalk = require("chalk");
 var fs = require("fs");
 const { execCommand, extractFileNames } = require("../utils");
 
-const renameSubtitles = (fileName) => {
+const renameSubtitles = (fileName, fileNamePattern) => {
   fs.readFile(fileName, "utf8", function (err, data) {
     if (err) {
       return console.log(err);
     }
+
+    console.log(fileNamePattern);
 
     fs.writeFile(
       fileName.replace(
@@ -30,11 +32,13 @@ const renameSubtitles = (fileName) => {
   });
 };
 
-const renameAllSubtitles = () =>
+const renameAllSubtitles = (fileNamePattern) =>
   execCommand("ls", (stdout) => {
     const allSrtFiles = extractFileNames(stdout, undefined, ".srt");
 
-    allSrtFiles.forEach((subtitle, index) => renameSubtitles(subtitle, index));
+    allSrtFiles.forEach((subtitle) =>
+      renameSubtitles(subtitle, fileNamePattern)
+    );
   });
 
 module.exports = { renameAllSubtitles };
