@@ -10,11 +10,13 @@ const renameSubtitles = (fileName, fileNamePattern) => {
 
     console.log(fileNamePattern);
 
+    const fileNamePatterRegexp = new RegExp(fileNamePattern);
+
     fs.writeFile(
       fileName.replace(
         fileName,
         // that line needs to be adjusted to various episode name regexp. Maybe pass and argumetn with it?
-        `${fileName.match(/.*e?p?.? ?(\d{2}).*/i)[1]}.srt`
+        `${fileName.match(fileNamePatterRegexp)[1]}.srt`
       ),
       data,
       "utf8",
