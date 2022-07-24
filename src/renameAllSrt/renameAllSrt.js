@@ -8,14 +8,11 @@ const renameSubtitles = (fileName, fileNamePattern) => {
       return console.log(err);
     }
 
-    console.log(fileNamePattern);
-
     const fileNamePatterRegexp = new RegExp(fileNamePattern);
 
     fs.writeFile(
       fileName.replace(
         fileName,
-        // that line needs to be adjusted to various episode name regexp. Maybe pass and argumetn with it?
         `${fileName.match(fileNamePatterRegexp)[1]}.srt`
       ),
       data,
