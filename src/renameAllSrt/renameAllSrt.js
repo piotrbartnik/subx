@@ -24,10 +24,9 @@ const renameSubtitles = (fileName, fileNamePattern) => {
         if (err) return console.log(err);
       }
     );
-    // removal needs to be done after write file as it's removing files we need
-    // execCommand(`rm -rf ${fileName}`, () =>
-    //   console.log(chalk.yellow(`removed ${fileName} subtitles file\n`))
-    // );
+    execCommand(`rm -rf ${fileName}`, () =>
+      console.log(chalk.yellow(`removed ${fileName} subtitles file\n`))
+    );
   });
 };
 
