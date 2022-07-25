@@ -1,8 +1,8 @@
 {
-  "name": "extractandcontertsubtitles",
+  "name": "subx",
   "version": "1.0.0",
   "description": "Extract and adjust subtitles for movie",
-  "main": "execCommand.js",
+  "main": "bin/index.js",
   "scripts": {
     "test": "jest"
   },
@@ -10,8 +10,20 @@
   "license": "MIT",
   "dependencies": {
     "@types/jest": "^27.4.1",
+    "cfonts": "^2.10.1",
     "chalk": "^4.0.1",
     "commander": "^9.2.0",
+    "inquirer": "^8.2.4",
     "jest": "^27.5.1"
+  },
+  "bin": {
+    "subx": "./bin/index.js"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "eslint": "^8.14.0",
+    "gulp": "^4.0.2",
+    "husky": "^7.0.4"
   }
 }
