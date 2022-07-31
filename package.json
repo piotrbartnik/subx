@@ -4,7 +4,8 @@
   "description": "Extract and adjust subtitles for movie",
   "main": "bin/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "gulp build"
   },
   "author": "Piotr Bartnik",
   "license": "MIT",
