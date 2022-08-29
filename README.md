@@ -27,9 +27,11 @@ Run `npm install`.
 ```
 
 - extract subtitles from movie directory (assuming the project was set in an adjacent directory):
+- install the package globally by running `npm i . -g`,
+- after that step you would be able to run `subx` command in a given directory,
 
 ```bash
-node ../extractSubtitles.js --track 2
+subx  extract-subtitles --track 2
 ```
 
 - depending on subtitles type:
@@ -40,27 +42,29 @@ node ../extractSubtitles.js --track 2
 ```bash
    sudo apt install snapd
    sudo snap install vobsub2srt
-   node ../vobsubToSrt.js
+   subx vobsub-to-srt
 ```
 
 - run bulk translation for str files to targeted language:
 
 ```bash
-node ../translateSrt.js
+subx translate-subtitle
 ```
 
 - run adjustement for subtitle time snapshots as during the translations and conversion some timestamps get wrong values:
 
 ```bash
-node ../replaceWrongTimestampInStr.js
+subx adjust-subtitles
 ```
+
+and more...
 
 ## To improve:
 
 - [ ] add argument for file extension
-- [ ] add argument for initial language translations
-- [ ] add argument for target language translation
-- [ ] create cli?
+- [v] add argument for initial language translations
+- [v] add argument for target language translation
+- [v] create cli
 
 ## License
 
