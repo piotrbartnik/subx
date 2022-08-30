@@ -6,7 +6,7 @@ const { renameAllSubtitles } = require("./renameAllSrt");
 const renameAllSubtitlesRun = () => {
   program.requiredOption(
     "-p, --file-pattern <string>",
-    "File patter from file name to extract - usuall as episode number. Example: 'subx rename-subtitles -p '.*E(\\d{2}).*''"
+    'File patter from file name to extract - usually as episode number. Example: subx rename-subtitles -p ".*E(\\d{2}).*". First regexp group will be taken as new subtitle name'
   );
 
   program.parse();
