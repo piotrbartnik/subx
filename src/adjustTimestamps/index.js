@@ -10,7 +10,7 @@ const adjustAllTimestampsRun = () => {
 
   const programOptions = program.opts();
 
-  adjustAllTimestamps(programOptions?.seconds);
+  adjustAllTimestamps(programOptions.seconds);
 };
 
 adjustAllTimestampsRun();

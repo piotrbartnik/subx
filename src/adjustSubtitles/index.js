@@ -12,7 +12,7 @@ const adjustAllSubtitlesRun = () => {
 
   const programOptions = program.opts();
 
-  adjustAllSubtitles(programOptions?.name);
+  adjustAllSubtitles(programOptions.name);
 };
 
 adjustAllSubtitlesRun();

@@ -13,7 +13,7 @@ const extractSubtitlesRun = () => {
 
   const programOptions = program.opts();
 
-  runExtraction(programOptions?.track);
+  runExtraction(programOptions.track);
 };
 
 extractSubtitlesRun();
