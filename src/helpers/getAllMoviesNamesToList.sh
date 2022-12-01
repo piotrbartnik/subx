@@ -6,7 +6,7 @@ fi
 
 echo "Creating filenames.txt"
 
-for filename in *.$1; do
+for filename in *."$1"; do
     [ -e "$filename" ] || continue
-    echo "${filename//$1/"srt"}" >> fileNames.txt
+    echo "${filename//$1/"srt"}" >>fileNames.txt
 done
