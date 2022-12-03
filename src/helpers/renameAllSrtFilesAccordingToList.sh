@@ -1,10 +1,6 @@
 #!/bin/bash
 
 for file in *.srt; do
-  read line
+  read -r line
   mv -v "${file}" "${line}"
 done <fileNames.txt
-
-if [ $a ]; then
-  echo "b"
-fi
