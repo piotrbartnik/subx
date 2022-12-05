@@ -24,10 +24,10 @@ const renameSubtitles = (fileName, fileNamePattern) => {
         if (err) return console.log(err);
       }
     );
-    execCommand(`rm -rf ${fileName}`, () =>
-      console.log(chalk.yellow(`removed ${fileName} subtitles file\n`))
-    );
   });
+  execCommand(`rm -rf "${fileName}"`, () =>
+    console.log(chalk.yellow(`removed ${fileName} subtitles file\n`))
+  );
 };
 
 const renameAllSubtitles = (fileNamePattern) =>

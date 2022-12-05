@@ -19,8 +19,8 @@ const translateAllFilesRun = () => {
   const programOptions = program.opts();
 
   translateAllFiles(
-    programOptions?.["inputLanguage"],
-    programOptions?.["outputLanguage"]
+    programOptions["inputLanguage"],
+    programOptions["outputLanguage"]
   );
 };
 

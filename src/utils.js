@@ -5,9 +5,9 @@ const execCommand = async (command, fn, suprassError, errorFn) =>
     if (err && !suprassError) {
       console.error(err);
     } else if (err && suprassError) {
-      errorFn?.(err);
+      errorFn(err);
     } else {
-      fn?.(stdout);
+      fn(stdout);
     }
   });
 

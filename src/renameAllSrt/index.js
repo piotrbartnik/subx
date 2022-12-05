@@ -13,7 +13,7 @@ const renameAllSubtitlesRun = () => {
 
   const programOptions = program.opts();
 
-  renameAllSubtitles(programOptions?.["filePattern"]);
+  renameAllSubtitles(programOptions["filePattern"]);
 };
 
 renameAllSubtitlesRun();

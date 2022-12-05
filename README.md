@@ -2,7 +2,7 @@
 
 Provide a file with internal subtitles (for example .mkv) then auto extract, translate and adjust srt files with subtitles.
 
-## Prerequisites - tested and used only on linux
+## Prerequisites - tested and used only on Ubuntu
 
 1. mkvinfo
    https://mkvtoolnix.download/doc/mkvinfo.html
