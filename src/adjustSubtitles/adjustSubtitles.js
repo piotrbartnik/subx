@@ -40,7 +40,7 @@ const adjustSubtitles = (fileName, customSubtitleName) => {
         }
       );
     }
-    execCommand(`rm -rf ${fileName}`, () =>
+    execCommand(`rm -rf "${fileName}"`, () =>
       console.log(chalk.yellow(`removed ${fileName}\n`))
     );
   });
